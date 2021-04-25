@@ -1,0 +1,29 @@
+---
+train:
+  params:
+    batch_size: 64
+    epoch: 100
+    lr: 0.001
+    decay: 0.1
+    decay_step: 8000
+    loss: MSELoss
+  save:
+    save_path: "/home/cyh/GazeBenchmark/exp/Implementation/Dilated-Net-gaze360"
+    model_name: DilatedNet
+    step: 20
+  data:
+    image: "/home/cyh/GazeDataset20200519/FaceBased/Gaze360/Image"
+    label: "/home/cyh/GazeDataset20200519/FaceBased/Gaze360/Label/train.label"
+  pretrains: "None"
+test:
+   load:
+      begin_step: 20
+      end_step: 100
+      steps: 20
+      load_path: "/home/cyh/GazeBenchmark/exp/Implementation/Dilated-Net-gaze360"
+      model_name: DilatedNet
+   data:
+      image: "/home/cyh/GazeDataset20200519/FaceBased/Gaze360/Image"
+      label: "/home/cyh/GazeDataset20200519/FaceBased/Gaze360/Label/val.label"
+
+reader: reader_gaze360
