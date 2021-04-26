@@ -1,17 +1,20 @@
 # Dilated-Net
 The Pytorch Implementation of "Appearance-Based Gaze Estimation Using Dilated-Convolutions". (updated in 2021/04/25)
 
-This is the implementated version in our survey **"Appearance-based Gaze Estimation With Deep Learning: A Review and Benchmark"**.
-Please refer our paper or visit our benchmark website <a href="http://phi-ai.org/project/Gazehub/" target="_blank">*GazeHub*</a> for more information.
-The performance of this version is reported in them.
+This is the implemented version metioned in our survey **"Appearance-based Gaze Estimation With Deep Learning: A Review and Benchmark"**.
+Please refer our paper or visit our benchmark website <a href="http://phi-ai.org/GazeHub/" target="_blank">*GazeHub*</a> for more information.
+The performance of this version is reported in the website.
 
 To know more detail about the method, please refer the origin paper.
 
-We recommend you to use the data processing code provided in <a href="http://phi-ai.org/project/Gazehub/" target="_blank">*GazeHub*</a>.
+We recommend you to use the data processing code provided in <a href="http://phi-ai.org/GazeHub/" target="_blank">*GazeHub*</a>.
 You can use the processed dataset and this code for directly running.
 
+## License
+The code is under the license of [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
 ## Introduction
-We provide two similar projects for leave-one-person-out evaluation and common training-test split.
+We provide two similar projects for leave-one-person-out evaluation and evaluation of common training-test split.
 They have the same architecture but different started modes.
 
 Each project contains following files/folders.
@@ -56,13 +59,13 @@ python train.py config/config_mpii.yaml
 ```
 
 ### Testing
-In leaveone folder, you can run
+In leaveout folder, you can run
 ```
 python test.py config/config_mpii.yaml 0
 ```
 or
 ```
-bash run.sh train.py config/config_mpii.yaml
+bash run.sh test.py config/config_mpii.yaml
 ```
 
 In the traintest folder, you can run
@@ -75,6 +78,7 @@ After training or test, you can find the result from the `save_path` in `config_
 
 
 ## Citation
+If you use our code, please cite:
 ```
 @InProceedings{Chen_2019_ACCV,
 	author="Chen, Zhaokang
